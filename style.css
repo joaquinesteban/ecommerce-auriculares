@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+@keyframes moverArribaAbajo {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
 :root{
     --color1: #dddde4;
     --color2: #736fed;
@@ -13,11 +19,16 @@
     --color6: #f0f0f0;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  color: #F1F1F1;
+  background-color: #1A1C2C;
+  overflow-x: hidden;
+}
 
-body{
-    font-family: 'Arial', sans-serif;
-    background-color: var(--color5);
-    color: var(--color6);
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 
@@ -47,7 +58,7 @@ li{
 }
 
 a{
-    font-size: 22px;
+    font-size: 20px;
     text-decoration: none;
     cursor: pointer;
     color: var(--color1);
@@ -87,15 +98,18 @@ a:hover{
 }
 
 .product-highlight > .btn{
-    width: 160px;
-    height: 40px;
-    background-color: var(--color2);
-    color: var(--color6);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+   background-color: #5A4EE1;
+  color: white;
+  border: none;
+  padding: 16px 50px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product-highlight > .btn:hover {
+  background-color: #5A189A;
 }
 
 .cart-icon{
@@ -109,6 +123,10 @@ a:hover{
 img{
     width: 450px;
     object-fit: cover;
+}
+
+.move-img{
+    animation: moverArribaAbajo 2s infinite; 
 }
 
 /* 
@@ -131,10 +149,10 @@ hr{
     text-align: center;
     font-size:35px;
     color: var(--color1);
-    padding: 32px;
+    padding: 10px 75px;
 }
 
-.promociones > .promo-grid, .productos-grid{
+.promociones > .promo-grid{
   max-width: 800px;  
   margin: 0 auto; 
   display: flex;
@@ -151,13 +169,24 @@ hr{
     display: flex;
     justify-content: space-between;
     height: 150px;
-    background-color: lightblue;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+   
+
+    background-color: #1e1f2e;
+    color: #F1F1F1;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.card-1:hover, .card-2:hover, .card-3:hover, .card-4:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
 
 figure > img{
     width: 138px;
@@ -182,44 +211,99 @@ figure > img{
  
 
 .card-header > button{
-    background-color: var(--color2);
-    color: var(--color6);
-    padding: 10px 10px;
-    border: 1px solid var(--color2);
-    border-radius: 30px;
-    cursor: pointer;
+    
+   
+    
+    
+    
+
+    background-color: #5A4EE1;
+  color: white;
+  border: none;
+  padding: 16px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
- /*  Sección de Productos */
+
+.card-header > button:hover {
+  background-color: #5A189A;
+}
+
+/*  Sección de Productos */
+.productos-grid{
+    width: 100vw;
+    height: 400px;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+}
 
 .productos > h2{
     text-align: start;
     font-size:35px;
     color: var(--color1);
-    padding: 32px;
+    padding: 10px 75px;
 }
 
 .producto-item{
-    width: 335px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 150px;
-    background-color: lightblue;
+    width: 280px;
+    height: 350px;
+    padding: 20px;
+
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     border-radius: 12px;
+    line-height: 36px;
+}
+
+.producto-item:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.producto-item > img{
+    width: 140px;
+    padding: 10px;
+}
+
+.producto-item > h3{
+    font-size: 20px;
+    color: var(--color1);
+}
+
+.producto-item > .price{
+    color: var(--color2);
+    font-weight: bold;
+}
+
+.producto-item > button{
+    background-color: 	#5A4EE1;
+  color: white;
+  border: none;
+  padding: 16px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.producto-item > button:hover {
+  background-color: #5A189A;
 }
 
 
 footer{
     width: 100vw;
-    height: 310px;
-    background-color: var(--color4);
+    height: 240px;
+    background-color: #1E1F2E;
+    padding: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -227,12 +311,21 @@ footer{
     width: 400px;
     height: 90px;
     padding: 15px;
+    line-height: 26px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between ;
- 
 }
 
-.social > span{
+.social > h3{
+    padding: 3px;
+}
+
+.social >.redes{
+    padding: 3px;
+}
+
+.social >.redes > span{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -257,14 +350,75 @@ footer{
 .whatsapp{
     background-image: url(./images/whatsapp.png);
 }
+.instagram:hover, .whatsapp:hover, .x:hover, .facebook:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out;
+}
 
-footer > .descripcion{
-    display: inline-block;
+.contacto{
+    width: 400px;
+    height: 90px;
+    color: var(--color4);
     padding: 15px;
-    text-align: center;
+    line-height: 26px;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between ;
 }
 
-.marca-icon{
-    width: 120px;
+.contacto > h3{
+    font-size: 20px;
+    padding: 3px;
+    color: var(--color1);
 }
 
+.contacto > p{
+    padding: 3px;
+}
+
+.suscribe{
+    width: 400px;
+    height: 90px;
+    padding: 15px;
+    color: var(--color4);
+    line-height: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    position: relative;
+}
+
+.suscribe > h3{
+    font-size: 20px;
+    padding: 3px;
+    color: var(--color1);
+}
+.suscribe > p{
+    padding: 3px;
+}
+
+.suscribe > form > input{
+    width: 330px;
+    height: 34px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    
+}
+
+.suscribe > form > span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./images/email.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+
+    position: absolute;
+    right: 62px;
+    top: 108px;
+}
